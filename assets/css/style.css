@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: lightgreen;
+}
+
+#map {
+  position: absolute;
+  justify-content: center;
+  width: 50%;
+  height: 50%;
+}
