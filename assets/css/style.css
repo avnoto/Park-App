@@ -1,6 +1,5 @@
 body {
-  font-family: 'Manrope', sans-serif;
-  background-image: url('/assets/images/autumnpark1.png');
+  background-image: url(/assets/images/autumnpark1.png);
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Kulim Park', sans-serif;
