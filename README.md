@@ -21,7 +21,7 @@ The site is published at https://avnoto.github.io/Park-App/.
 The application has an embedded Google map with the coordinates of the city of Sacramento, and markers with the specification of parks, using Google Places API. When the user clicks on a marker, information about the given park will appear in the right-side container. Information includes:
 
 - Park name
-- Hours of peration
+- Hours of operation
 - Address
 - Rating
 - Park features
