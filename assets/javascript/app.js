@@ -10,7 +10,7 @@ $(document).ready(function () {
 
     map = new google.maps.Map(document.getElementById('map'), {
       center: sacramento,
-      zoom: 11,
+      zoom: 11.5,
     });
 
     var request = {
@@ -48,27 +48,27 @@ $(document).ready(function () {
 
       if (place.rating < 2) {
         $('.star-container').html(
-          $(`<img src="./assets/images/1star.png" width="35%" height="35%"/>`)
+          $(`<img src="./assets/images/1star.png" width="25%" height="25%"/>`)
         );
       }
       if (place.rating > 2 && place.rating < 3) {
         $('.star-container').html(
-          $(`<img src="./assets/images/2stars.png" width="35%" height="35%"/>`)
+          $(`<img src="./assets/images/2stars.png" width="25%" height="25%"/>`)
         );
       }
       if (place.rating > 3 && place.rating < 4) {
         $('.star-container').html(
-          $(`<img src="./assets/images/3stars.png" width="35%" height="35%"/>`)
+          $(`<img src="./assets/images/3stars.png" width="25%" height="25%"/>`)
         );
       }
       if (place.rating > 4 && place.rating < 5) {
         $('.star-container').html(
-          $(`<img src="./assets/images/4stars.png" width="35%" height="35%"/>`)
+          $(`<img src="./assets/images/4stars.png" width="30%" height="30%"/>`)
         );
       }
       if (place.rating >= 5) {
         $('.star-container').html(
-          $(`<img src="./assets/images/5stars.png" width="35%" height="35%"/>`)
+          $(`<img src="./assets/images/5stars.png" width="30%" height="30%"/>`)
         );
       }
 
