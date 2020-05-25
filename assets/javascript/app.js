@@ -40,160 +40,225 @@ $(document).ready(function () {
       position: place.geometry.location,
     });
     google.maps.event.addListener(marker, 'click', function () {
-      $('.parkName').text(place.name);
-      $('.openHours').text('Open');
+      $('.card-title').text(place.name);
+      $('.openHours').text('Open: Sunrise to Sunset');
       $('.rating').text(place.rating + ' out of 5 stars');
       $('.ratingTotal').text(place.user_ratings_total + ' Reviews');
       $('.parkAddress').text(place.vicinity);
 
+      if (place.rating < 2) {
+        $('.star-container').html(
+          $(`<img src="./assets/images/1star.png" width="35%" height="35%"/>`)
+        );
+      }
+      if (place.rating > 2 && place.rating < 3) {
+        $('.star-container').html(
+          $(`<img src="./assets/images/2stars.png" width="35%" height="35%"/>`)
+        );
+      }
+      if (place.rating > 3 && place.rating < 4) {
+        $('.star-container').html(
+          $(`<img src="./assets/images/3stars.png" width="35%" height="35%"/>`)
+        );
+      }
+      if (place.rating > 4 && place.rating < 5) {
+        $('.star-container').html(
+          $(`<img src="./assets/images/4stars.png" width="35%" height="35%"/>`)
+        );
+      }
+      if (place.rating >= 5) {
+        $('.star-container').html(
+          $(`<img src="./assets/images/5stars.png" width="35%" height="35%"/>`)
+        );
+      }
+
       if (place.name === 'William Land Regional Park') {
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
         $('.features').text(
           'Adventure Play Area, Amphitheater, Attractions (Fairytale Town, Funderland, Sacramento Zoo), Basketball Court, Golf Course, Jogging Path, Lakes, Picnic Areas, Restrooms, Rock Gardens, Off-street Parking, Softball Field, Soccer Fields, Village Green, Wading Pool'
-        );
-        var parkMapImg = $('.parkImg');
-        parkMapImg.html(
-          $(
-            `<img src="https://www.cityofsacramento.org/-/media/Corporate/Images/ParksandRec/Parks/William-landjpg/landPark_revised9-3-2014.jpg?h=500&w=642&la=en"/>`
-          )
         );
       }
       if (place.name === 'Southside Park') {
-        $('.features').text('');
-        var parkMapImg = $('.parkImg');
-        parkMapImg.html(
-          $(
-            `<img src="https://www.cityofsacramento.org/-/media/Corporate/Images/ParksandRec/Parks/Southside-Park/southsidepark.png?h=421&w=550&la=en"/>`
-          )
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text(
+          'Amphitheater, Lake with Fishing Piers, Tennis Courts, Basketball Court, Picnic Areas, Play Area, Southside Clubhouse, Swimming and Wading Pool, Jogging Trail'
         );
       }
       if (place.name === 'Tahoe Park') {
-        $('.features').text('');
-        var parkMapImg = $('.parkImg');
-        parkMapImg.html(
-          $(
-            `<img src="https://www.cityofsacramento.org/-/media/Corporate/Images/ParksandRec/Parks/Tahoe-Park/tahoe_pkrevised2a.gif?la=en"/>`
-          )
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text(
+          'Bantam Soccer Field, Basketball Court, Horseshoes, Picnic Areas, Restrooms, Play Areas, Softball Field, Swimming and Wading Pool, Volleyball'
         );
       }
       if (place.name === 'McKinley Park') {
-        $('.features').text('');
-        var parkMapImg = $('.parkImg');
-        parkMapImg.html(
-          $(
-            `<img src="http://www.cityofsacramento.org/-/media/Corporate/Images/ParksandRec/Parks/McKinley-Park/mckinley_map.gif?h=423&w=550&la=en"/>`
-          )
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text(
+          'Basketball Court, Community Center, Garden and Arts Center, Group Picnic Area, Horseshoes, Jogging Trail, Play Areas, Climbing Wall, Restrooms, Soccer Field, Softball Field, Swimming and Wading Pool, Tennis Courts, Volleyball Court'
         );
       }
       if (place.name === 'East Portal Park') {
-        $('.features').text('');
-        var parkMapImg = $('.parkImg');
-        parkMapImg.html(
-          $(
-            `<img src="https://www.cityofsacramento.org/-/media/Corporate/Images/ParksandRec/Parks/East-Portal-Park/eportal_map.jpg?h=363&w=550&la=en"/>`
-          )
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text(
+          'Bocce Courts, East Portal Clubhouse, Picnic Areas, Play Areas (Adventure Play Area, Tot Lot Play Area), Softball Field'
         );
       }
       if (place.name === 'Discovery Park') {
-        $('.features').text('');
-        var parkMapImg = $('.parkImg');
-        parkMapImg.html(
-          $(
-            `<img src="https://pdf2jpg.net/files/92cda48864e417897737e591bb2360db82a727f9/Discovery_Park_Map-page-001.jpg"/>`
-          )
-        );
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text('Picnic Areas, Archery Range, Bicycle Trail');
       }
       if (place.name === 'Woodlake Park') {
-        $('.features').text('');
-        var parkMapImg = $('.parkImg');
-        parkMapImg.html(
-          $(
-            `<img src="https://lh3.googleusercontent.com/proxy/NSoEHqFyIfnll2h4cMj5Yr9jZjp-6kGvjHJuJUb5UR2NGCXCExn6rHUCX34Axhx8HNbbOauVlX7H_ZOPB3PhfSS8z-9kLi0b_FSWSsxs4JcS7uk7MYDikrTXpdWkqw90iGZIVqYDZWuQwxyRLfpA5r0HcXw"/>`
-          )
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text(
+          'Adventure Play Area, Benches, Amphitheater, Peace Officer Memorial, Softball Field, Tennis Court, Tot Lot Play Area, Woodlake Clubhouse'
         );
       }
       if (place.name === 'Parkway Oak Park') {
-        $('.features').text('');
-        var parkMapImg = $('.parkImg');
-        parkMapImg.html(
-          $(
-            `<img src="https://www.cityofsacramento.org/-/media/Corporate/Images/ParksandRec/Parks/Parkway-Oaks/parkwayoaks_plan.jpg?la=en"/>`
-          )
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text(
+          'Adventure Play Area, Tot Lot Play Area, Walking Path, Picnic Areas, Shade Structure, Soccer Field'
         );
       }
       if (place.name === 'Gardenland Park') {
-        $('.features').text('');
-        var parkMapImg = $('.parkImg');
-        parkMapImg.html(
-          $(
-            `<img src="https://www.cityofsacramento.org/-/media/Corporate/Images/ParksandRec/Parks/Gardenland-Park/09-parkmpgardenland.jpg?la=en"/>`
-          )
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text(
+          'Water Spray Feature, Plaza with Picnic Tables, Bicycle Trail'
         );
+        $('.notice').text(
+          'Until further notice, the spray feature at this park is closed due to the inability to distance 6 feet while using this feature.'
+        );
+        $('.covid-notice').removeClass('hide');
       }
       if (place.name === 'Mae Fong Park') {
-        $('.features').text('');
-        var parkMapImg = $('.parkImg');
-        parkMapImg.html(
-          $(
-            `<img src="https://www.cityofsacramento.org/-/media/Corporate/Images/ParksandRec/Parks/Mae-Park/mae-fong-plan.jpg?la=en"/>`
-          )
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text(
+          'Jogging Trail, Outdoor Fitness Court, Outdoor Ping Pong Table, Disk Golf Course'
         );
       }
       if (place.name === 'Belle Cooledge Park') {
-        $('.features').text('');
-        var parkMapImg = $('.parkImg');
-        parkMapImg.html(
-          $(
-            `<img src="https://www.cityofsacramento.org/-/media/Corporate/Images/ParksandRec/Parks/Cooledge-Park-South/cooledge-amenity-guide.jpg?la=en"/>`
-          )
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text(
+          'Picnic Areas, Amphitheater, Jump Tent, Adventure Play Area, Tot Lot Play Area'
         );
       }
       if (place.name === 'Lawrence Park') {
-        $('.features').text('');
-        var parkMapImg = $('.parkImg');
-        parkMapImg.html(
-          $(
-            `<img src="https://www.cityofsacramento.org/-/media/Corporate/Images/ParksandRec/Parks/Lawrence-Park/lawrence-map.gif?la=en"/>`
-          )
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text(
+          'Basketball Court, Gazebo, Play Area, Softball Field, Picnic Areas, Restrooms'
         );
       }
       if (place.name === 'McClatchy Park') {
-        $('.features').text('');
-        var parkMapImg = $('.parkImg');
-        parkMapImg.html(
-          $(
-            `<img src="https://www.cityofsacramento.org/-/media/Corporate/Images/ParksandRec/Parks/McClatchy-Park/mcclatchy-map.jpg?la=en"/>`
-          )
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text(
+          'Basketball Courts, Baseball Fields, Butterfly Garden with Interpretive Signs, Disk Golf Course, Drinking Fountain, Jogging Path with Fitness Equipment, Play Areas, Picnic Areas, Skate Park, Tennis Courts, Water Spray Area'
         );
+        $('.notice').text(
+          'Until further notice, the spray feature at this park is closed due to the inability to distance 6 feet while using this feature.'
+        );
+        $('.covid-notice').removeClass('hide');
       }
       if (place.name === 'John C. Fremont Park') {
-        $('.features').text('');
-        var parkMapImg = $('.parkImg');
-        parkMapImg.html(
-          $(
-            `<img src="https://www.cityofsacramento.org/-/media/Corporate/Images/ParksandRec/Parks/Fremont-Park/fremont_photo1.jpg?la=en"/>`
-          )
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text(
+          'Adventure Playground, Drinking Fountain, Restrooms, Seating and Picnic Areas, Benches, Walkways, Wi-Fi'
         );
       }
       if (place.name === 'Land Park Playground') {
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
         $('.features').text(
           'Adventure Play Area, Amphitheater, Attractions (Fairytale Town, Funderland, Sacramento Zoo), Basketball Court, Golf Course, Jogging Path, Lakes, Picnic Areas, Restrooms, Rock Gardens, Off-street Parking, Softball Field, Soccer Fields, Village Green, Wading Pool'
         );
-        var parkMapImg = $('.parkImg');
-        parkMapImg.html(
-          $(
-            `<img src="https://www.cityofsacramento.org/-/media/Corporate/Images/ParksandRec/Parks/William-landjpg/landPark_revised9-3-2014.jpg?h=500&w=642&la=en"/>`
-          )
+      }
+      if (place.name === 'Fourth Avenue Park') {
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text('Picnic Area, Playground');
+      }
+      if (place.name === 'Temple Avenue Park') {
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text('Basketball Court, Play Area');
+      }
+      if (place.name === 'Franklin D. Roosevelt Park') {
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text(
+          'Picnic Areas, Softball Field, Restroom (Open 24/7)'
         );
       }
-      // if (place.name === 'Jonas Larkspur Park') {
-      //   $('.features').text('');
-      //   var parkMapImg = $('.parkImg');
-      //   parkMapImg.html(
-      //     $(
-      //       `<img src="https://www.cityofsacramento.org/-/media/Corporate/Images/ParksandRec/Parks/Fremont-Park/fremont_photo1.jpg?la=en"/>`
-      //     )
-      //   );
-      // }
+      if (place.name === 'Frank Seymour Park') {
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text('Pathway lights, Walkways');
+      }
+      if (place.name === 'Bahnfleth Park') {
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text('Picnic Areas, Soccer Field');
+      }
+      if (place.name === 'Robla Community Park') {
+        $('.text-left').addClass('hide');
+        $('.covid-text').addClass('hide');
+        $('.main-covid-header').addClass('hide');
+        $('.feature-header').removeClass('hide');
+        $('.features').text(
+          'Bantam Soccer Fields, Baseball Field, Basketball Courts, Benches with Interpretive Signage, Group Picnic Area, Pathway, Play Areas, Skate Park, Soccer Field'
+        );
+      }
     });
   }
 });
