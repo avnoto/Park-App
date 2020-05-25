@@ -88,6 +88,10 @@ $(document).ready(function () {
         $('.features').text(
           'Adventure Play Area, Amphitheater, Attractions (Fairytale Town, Funderland, Sacramento Zoo), Basketball Court, Golf Course, Jogging Path, Lakes, Picnic Areas, Restrooms, Rock Gardens, Off-street Parking, Softball Field, Soccer Fields, Village Green, Wading Pool'
         );
+        $('.notice').text(
+          'Fairytale Town is temporarily closed until further notice.'
+        );
+        $('.covid-notice').removeClass('hide');
       }
       if (place.name === 'Southside Park') {
         $('.notice').text('');
@@ -245,6 +249,10 @@ $(document).ready(function () {
         $('.features').text(
           'Adventure Play Area, Amphitheater, Attractions (Fairytale Town, Funderland, Sacramento Zoo), Basketball Court, Golf Course, Jogging Path, Lakes, Picnic Areas, Restrooms, Rock Gardens, Off-street Parking, Softball Field, Soccer Fields, Village Green, Wading Pool'
         );
+        $('.notice').text(
+          'Fairytale Town is temporarily closed until further notice.'
+        );
+        $('.covid-notice').removeClass('hide');
       }
       if (place.name === 'Fourth Avenue Park') {
         $('.notice').text('');
