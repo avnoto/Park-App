@@ -11,7 +11,7 @@ $(document).ready(function () {
 
     map = new google.maps.Map(document.getElementById('map'), {
       center: sacramento,
-      zoom: 11.5,
+      zoom: 11,
     });
 
     //Used name parameter to show places only with 'park' in it's name
@@ -79,6 +79,8 @@ $(document).ready(function () {
       }
       //features per park are hard-coded because it does not come back in the response for Places API
       if (place.name === 'William Land Regional Park') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
@@ -88,6 +90,8 @@ $(document).ready(function () {
         );
       }
       if (place.name === 'Southside Park') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
@@ -97,6 +101,8 @@ $(document).ready(function () {
         );
       }
       if (place.name === 'Tahoe Park') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
@@ -106,6 +112,8 @@ $(document).ready(function () {
         );
       }
       if (place.name === 'McKinley Park') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
@@ -115,6 +123,8 @@ $(document).ready(function () {
         );
       }
       if (place.name === 'East Portal Park') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
@@ -124,6 +134,8 @@ $(document).ready(function () {
         );
       }
       if (place.name === 'Discovery Park') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
@@ -131,6 +143,8 @@ $(document).ready(function () {
         $('.features').text('Picnic Areas, Archery Range, Bicycle Trail');
       }
       if (place.name === 'Woodlake Park') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
@@ -140,6 +154,8 @@ $(document).ready(function () {
         );
       }
       if (place.name === 'Parkway Oak Park') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
@@ -163,6 +179,8 @@ $(document).ready(function () {
         $('.parkAddress').text('310 Bowman Ave, Sacramento');
       }
       if (place.name === 'Mae Fong Park') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
@@ -172,6 +190,8 @@ $(document).ready(function () {
         );
       }
       if (place.name === 'Belle Cooledge Park') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
@@ -181,6 +201,8 @@ $(document).ready(function () {
         );
       }
       if (place.name === 'Lawrence Park') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
@@ -203,6 +225,8 @@ $(document).ready(function () {
         $('.covid-notice').removeClass('hide');
       }
       if (place.name === 'John C. Fremont Park') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
@@ -212,6 +236,8 @@ $(document).ready(function () {
         );
       }
       if (place.name === 'Land Park Playground') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
@@ -221,6 +247,8 @@ $(document).ready(function () {
         );
       }
       if (place.name === 'Fourth Avenue Park') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
@@ -228,6 +256,8 @@ $(document).ready(function () {
         $('.features').text('Picnic Area, Playground');
       }
       if (place.name === 'Temple Avenue Park') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
@@ -235,6 +265,8 @@ $(document).ready(function () {
         $('.features').text('Basketball Court, Play Area');
       }
       if (place.name === 'Franklin D. Roosevelt Park') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
@@ -244,6 +276,8 @@ $(document).ready(function () {
         );
       }
       if (place.name === 'Frank Seymour Park') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
@@ -251,6 +285,8 @@ $(document).ready(function () {
         $('.features').text('Pathway lights, Walkways');
       }
       if (place.name === 'Bahnfleth Park') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
@@ -258,6 +294,8 @@ $(document).ready(function () {
         $('.features').text('Picnic Areas, Soccer Field');
       }
       if (place.name === 'Robla Community Park') {
+        $('.notice').text('');
+        $('.covid-notice').text('');
         $('.text-left').addClass('hide');
         $('.covid-text').addClass('hide');
         $('.main-covid-header').addClass('hide');
