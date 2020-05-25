@@ -1,4 +1,4 @@
-# Park-App
+# Sacramento Park Search
 
 This application searches parks in the Sacramento area. Created with HTML, CSS, Bootstrap, jQuery, Google Maps Javascript API, and Google Places API.
 
