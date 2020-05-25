@@ -1,5 +1,5 @@
 body {
-  background-image: url(/assets/images/autumnpark1.png);
+  background-image: url(https://art.ngfiles.com/images/94000/94846_gordyh_park-background.png?f1270566376);
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Kulim Park', sans-serif;
@@ -7,6 +7,8 @@ body {
 
 #map {
   height: 600px;
+  border-radius: 8px;
+  box-shadow: 1px 2px 5px #999;
 }
 
 .image {
@@ -45,9 +47,14 @@ p {
 .covid-text {
   font-size: 18px;
   padding-bottom: 30px;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 ul {
   font-size: 18px;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 1px 2px 5px #999;
 }
